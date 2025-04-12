@@ -30,13 +30,8 @@ init()
          * pair as for the foreground color, though of course that is not
          * necessary:
          */
-        init_pair(1, COLOR_RED,     COLOR_BLACK);
-        init_pair(2, COLOR_GREEN,   COLOR_BLACK);
-        init_pair(3, COLOR_YELLOW,  COLOR_BLACK);
-        init_pair(4, COLOR_BLUE,    COLOR_BLACK);
-        init_pair(5, COLOR_CYAN,    COLOR_BLACK);
-        init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
-        init_pair(7, COLOR_WHITE,   COLOR_BLACK);
+        init_pair(1, COLOR_BLACK, COLOR_GREEN);
+        init_pair(2, COLOR_GREEN, COLOR_BLACK);
     }
 
     inited = 1;
@@ -44,14 +39,15 @@ init()
 
 static void
 step() {
-    int num = 0;
-    for (;;)
-    {
-        int c = getch();     /* refresh, accept single keystroke of input */
-        attrset(COLOR_PAIR(num % 8));
-        num++;
-        /* process the command keystroke */
+    for (int y = 0; y < 100; y++) {
+        for (int x = 0; x < 100; x++) {
+            int pair = (x + y) % 2 ? 1 : 2;
+            attron(COLOR_PAIR(pair));
+            mvaddch(y, x, ' ');
+            attroff(COLOR_PAIR(pair));
+        }
     }
+    refresh();
 }
 
 static void
