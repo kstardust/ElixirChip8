@@ -98,7 +98,7 @@ draw_nif(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
             c += 1; // 0 -> 1, 1 -> 2
             if (c >= 3) c = 3;
             attron(COLOR_PAIR(c));
-            mvaddch(y, x, ' ');
+            mvprintw(y, x*2, "  ");
             attroff(COLOR_PAIR(c));
         }
     }
