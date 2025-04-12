@@ -1,0 +1,19 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-fPIC",
+      "-isysroot",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+      "-I/opt/homebrew/Cellar/erlang/27.2.1/lib/erlang/erts-15.2.1/include",
+      "-c",
+      "-o",
+      "ncurses_ui.o",
+      "ncurses_ui.c"
+    ],
+    "directory": "/Users/Kevin/Development/Elixir/chip8/nif/ncurses_ui",
+    "file": "/Users/Kevin/Development/Elixir/chip8/nif/ncurses_ui/ncurses_ui.c",
+    "output": "/Users/Kevin/Development/Elixir/chip8/nif/ncurses_ui/ncurses_ui.o"
+  }
+]
