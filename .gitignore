@@ -24,3 +24,5 @@ chip8-*.tar
 .ccls-cache/
 *.so
 *.o
+compile_commands.json
+
