@@ -17,6 +17,7 @@ defmodule Chip8.Memory do
     # TODO: Check if address is valid
     {Map.get(data, address), memory}
   end
+
   def write(%__MODULE__{data: data} = memory, address, value) do
     # TODO: Check if address is valid
     {
