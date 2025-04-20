@@ -4,9 +4,13 @@ defmodule Chips8.CPU.Macros do
     keys = Enum.map(general_purpose_suffixes, & String.to_atom("reg_v#{<<&1>>}"))
       ++ [:reg_i, :reg_pc, :reg_sp]
     fields = Enum.map(keys, & {&1, 0})
+    types = Enum.map(keys, & {&1, :integer})
 
     quote do
       defstruct unquote(fields)
+      @type t :: %__MODULE__{
+        unquote_splicing(types)
+      }
     end
   end
 end
